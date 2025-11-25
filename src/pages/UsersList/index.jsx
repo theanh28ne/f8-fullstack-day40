@@ -8,11 +8,11 @@ const UsersList = () => {
 
   return (
     <div className="m-5">
-      <ul className="flex flex-wrap gap-4">
-        {isLoading ? (
-          <Loading />
-        ) : (
-          users.map((user) => {
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <ul className="flex flex-wrap gap-4">
+          {users.map((user) => {
             return (
               <Card
                 key={user.id}
@@ -22,9 +22,9 @@ const UsersList = () => {
                 website={user.website}
               />
             );
-          })
-        )}
-      </ul>
+          })}
+        </ul>
+      )}
     </div>
   );
 };
